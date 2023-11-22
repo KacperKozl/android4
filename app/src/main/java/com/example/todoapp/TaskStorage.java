@@ -14,6 +14,11 @@ public class TaskStorage {
             Task task=new Task();
             task.setName("Zadanie numer "+i);
             task.setDone(i%5==0);
+            if(i%3==0){
+                task.setCategory(Category.STUDIA);
+            }else{
+                task.setCategory(Category.DOM);
+            }
             tasks.add(task);
         }
     }
@@ -25,5 +30,9 @@ public class TaskStorage {
             if(task.getId().equals(id)) return task;
         }
         return null;
+    }
+
+    public void addTask(Task task) {
+        tasks.add(task);
     }
 }
